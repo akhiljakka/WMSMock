@@ -1,0 +1,98 @@
+<!--<app-order-form></app-order-form>-->
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Mock WMS</title>
+
+    <!-- Bootstrap CSS and Font Awesome -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+    <div class="page-wrapper">
+
+        <!-- MENU SIDEBAR-->
+        <aside class="menu-sidebar d-none d-lg-block">
+            <div class="logo">
+                <a href="home.html">
+                    <img src="assets/wms.png" alt="Logo for WMS" class="img-responsive">
+                </a>
+            </div>
+            <div class="menu-sidebar-content js-scrollbar1">
+                <nav class="navbar-sidebar">
+                    <ul class="list-unstyled navbar-list">
+                        <li>
+                            <a routerLink="/orderInsertUpdate">OrderInsertUpdate</a>
+                        </li>
+                        <li>
+                            <a routerLink="/adviceInsertUpdate">AdviceInsertUpdate</a>
+                        </li>
+                        <li>
+                            <a routerLink="/skuInsertUpdate">SKUInsertUpdate</a>
+                        </li>
+                    </ul>
+                </nav>
+
+            </div>
+        </aside>
+        <!-- END MENU SIDEBAR-->
+
+        <!-- PAGE CONTAINER-->
+        <div class="page-container">
+            <!-- HEADER DESKTOP-->
+            <header class="header-desktop">
+                <div class="section-content section-content-p30">
+                    <div class="container-fluid">
+                        <div class="header-wrap">
+                            <form class="form-header" onsubmit="return false;" method="GET">
+                                <h1>Mock WMS Project</h1>
+                            </form>
+
+                        </div>
+                        <div class="account-wrap"></div>
+                    </div>
+                </div>
+            </header>
+            <!-- END HEADER DESKTOP-->
+
+            <!-- MAIN CONTENT-->
+            <div class="main-content">
+                <div class="section-content section-content-p30">
+                    <div class="container-fluid">
+                        <div>
+
+                        </div>
+                        <router-outlet></router-outlet>
+
+                        <div class="col-md-1">
+                            <div class="arrows">
+                                <a href="#"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- END MAIN CONTENT-->
+
+
+    <!-- END PAGE CONTAINER-->
+
+
+
+
+</body>
+
+
+</html>
+<!-- end document-->

@@ -1,0 +1,77 @@
+<h2>Advice Insert Update Form</h2>
+<p>&nbsp;</p>
+<form [formGroup]="adviceForm" (ngSubmit)="onSubmit()">
+    <div class="form-row">
+        <div>
+
+            <label for="clientId">Client ID</label>
+            <input id="clientId" formControlName="clientId" />
+        </div>
+
+        <div>
+            <label for="adviceId">Advice ID</label>
+            <input id="adviceId" formControlName="adviceId" />
+        </div>
+    </div>
+    <div class="form-row">
+        <div>
+            <label for="adviceType">Advice Type</label>
+            <input id="adviceType" formControlName="adviceType" />
+        </div>
+        <div>
+            <label for="referenceBarcode">Reference Barcode</label>
+            <input id="referenceBarcode" formControlName="referenceBarcode" />
+        </div>
+    </div>
+    <div class="form-row">
+        <div>
+            <label for="supplierId">Supplier ID</label>
+            <input id="supplierId" formControlName="supplierId" />
+        </div>
+        <div>
+            <label for="additionalHostData">Additional Host Data</label>
+            <input id="additionalHostData" formControlName="additionalHostData" />
+        </div>
+    </div>
+
+    <div formGroupName="adviceLines">
+        <div formArrayName="adviceLine" *ngFor="let adviceLine of adviceLines.controls; let i = index">
+            <div [formGroupName]="i">
+                <h3>Advice Line {{ i + 1 }}</h3>
+                <div class="form-row">
+                    <div>
+                        <label for="adviceLineId-{{i}}">Advice Line ID</label>
+                        <input id="adviceLineId-{{i}}" formControlName="adviceLineId" />
+                    </div>
+                    <div>
+                        <label for="skuId-{{i}}">SKU ID</label>
+                        <input id="skuId-{{i}}" formControlName="skuId" />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div>
+                        <label for="quantityTarget-{{i}}">Quantity Target</label>
+                        <input id="quantityTarget-{{i}}" formControlName="quantityTarget" type="number" />
+                    </div>
+                    <div>
+                        <label for="batch-{{i}}">Batch</label>
+                        <input id="batch-{{i}}" formControlName="batch" />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div>
+                        <label for="additionalHostData-{{i}}">Additional Host Data</label>
+                        <input id="additionalHostData-{{i}}" formControlName="additionalHostData" />
+                    </div>
+                    <div>
+                        <label for="bestBeforeDate-{{i}}">Best Before Date</label>
+                        <input id="bestBeforeDate-{{i}}" formControlName="bestBeforeDate" type="date" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button type="button" (click)="addAdviceLine()">Add Advice Line</button>
+    </div>
+
+    <button type="submit">Submit</button>
+</form>

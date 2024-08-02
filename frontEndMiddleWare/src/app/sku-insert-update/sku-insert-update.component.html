@@ -1,0 +1,112 @@
+<h2>SKU Insert Update Form</h2>
+<p>&nbsp;</p>
+<form [formGroup]="skuForm" (ngSubmit)="onSubmit()">
+    <div class="form-row">
+        <div>
+            <label for="clientId">Client ID</label>
+            <input id="clientId" formControlName="clientId" />
+        </div>
+        <div>
+            <label for="skuId">SKU ID</label>
+            <input id="skuId" formControlName="skuId" />
+        </div>
+    </div>
+    <div class="form-row">
+        <div>
+            <label for="productCode">Product Code</label>
+            <input id="productCode" formControlName="productCode" />
+        </div>
+        <div>
+            <label for="description">Description</label>
+            <input id="description" formControlName="description" />
+        </div>
+    </div>
+    <div class="form-row">
+        <div>
+            <label for="cycleCountingThreshold">Cycle Counting Threshold</label>
+            <input id="cycleCountingThreshold" formControlName="cycleCountingThreshold" type="number" />
+        </div>
+        <div>
+            <label for="baseQuantityUnitId">Base Quantity Unit ID</label>
+            <input id="baseQuantityUnitId" formControlName="baseQuantityUnitId" />
+        </div>
+    </div>
+
+    <div>
+        <label for="batchMandatoryForHost">Batch Mandatory for Host</label>
+        <input id="batchMandatoryForHost" formControlName="batchMandatoryForHost" type="checkbox" />
+    </div>
+
+    <div formGroupName="availableQuantityUnits">
+        <div formArrayName="availableQuantityUnit"
+            *ngFor="let availableQuantityUnit of availableQuantityUnits.controls; let i = index">
+            <div [formGroupName]="i">
+                <h3>Available Quantity Unit {{ i + 1 }}</h3>
+                <div class="form-row">
+                    <div>
+                        <label for="quantityUnitId-{{i}}">Quantity Unit ID</label>
+                        <input id="quantityUnitId-{{i}}" formControlName="quantityUnitId" />
+                    </div>
+                    <div>
+                        <label for="totalWeight-{{i}}">Total Weight</label>
+                        <input id="totalWeight-{{i}}" formControlName="totalWeight" type="number" />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div>
+                        <label for="netWeight-{{i}}">Net Weight</label>
+                        <input id="netWeight-{{i}}" formControlName="netWeight" type="number" />
+                    </div>
+                    <div>
+                        <label for="length-{{i}}">Length</label>
+                        <input id="length-{{i}}" formControlName="length" type="number" />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div>
+                        <label for="width-{{i}}">Width</label>
+                        <input id="width-{{i}}" formControlName="width" type="number" />
+                    </div>
+                    <div>
+                        <label for="height-{{i}}">Height</label>
+                        <input id="height-{{i}}" formControlName="height" type="number" />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div>
+                        <label for="totalVolume-{{i}}">Total Volume</label>
+                        <input id="totalVolume-{{i}}" formControlName="totalVolume" type="number" />
+                    </div>
+                    <div>
+                        <label for="hostWeightUnitId-{{i}}">Host Weight Unit ID</label>
+                        <input id="hostWeightUnitId-{{i}}" formControlName="hostWeightUnitId" />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div>
+                        <label for="hostVolumeUnitId-{{i}}">Host Volume Unit ID</label>
+                        <input id="hostVolumeUnitId-{{i}}" formControlName="hostVolumeUnitId" />
+                    </div>
+                    <div>
+                        <label for="hostLengthUnitId-{{i}}">Host Length Unit ID</label>
+                        <input id="hostLengthUnitId-{{i}}" formControlName="hostLengthUnitId" />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div>
+                        <label for="defaultPickQuantityUnit-{{i}}">Default Pick Quantity Unit</label>
+                        <input id="defaultPickQuantityUnit-{{i}}" formControlName="defaultPickQuantityUnit"
+                            type="checkbox" />
+                    </div>
+                    <div>
+                        <label for="factorToBaseQU-{{i}}">Factor to Base QU</label>
+                        <input id="factorToBaseQU-{{i}}" formControlName="factorToBaseQU" type="number" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button type="button" (click)="addAvailableQuantityUnit()">Add Available Quantity Unit</button>
+    </div>
+
+    <button type="submit">Submit</button>
+</form>
