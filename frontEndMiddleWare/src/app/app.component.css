@@ -1,0 +1,5 @@
+div li:hover {
+/* Change background color on hover */
+    font-weight: bold; 
+    color: black;/* Apply bold font weight on hover */
+  }

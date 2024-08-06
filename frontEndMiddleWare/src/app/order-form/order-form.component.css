@@ -9,8 +9,18 @@ label {
 
 input {
     width: 300px;
+    border-radius: 5px;
+    border: 2px solid #9a8a8a;
 }
 
 button {
     margin-top: 10px;
+    border-radius: 25px;
+    border: 2px solid #ffb517;
+    background-color:rgb(86, 185, 246) ;
+    color: black;
+    
+}
+body{
+    background-color: #cddae0;
 }
