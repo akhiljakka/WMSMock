@@ -1,0 +1,41 @@
+<div>
+    <h2>Orders</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Operator ID</th>
+                <th>Finish Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let order of orders" (click)="selectOrder(order)">
+                <td>{{ order.orderId }}</td>
+                <td>{{ order.operatorId }}</td>
+                <td>{{ order.finishTime }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div *ngIf="selectedOrderLines">
+    <h2>Order Lines</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Order Line ID</th>
+                <th>SKU ID</th>
+                <th>Quantity Target</th>
+                <th>Cancel Reason</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let line of selectedOrderLines">
+                <td>{{ line.orderLineId }}</td>
+                <td>{{ line.inventoryCriteriaConfirm.skuId }}</td>
+                <td>{{ line.inventoryCriteriaConfirm.quantityBaseTargetHost }}</td>
+                <td>{{ line.cancelReason }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
