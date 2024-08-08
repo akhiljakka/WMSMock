@@ -1,4 +1,5 @@
-<h3>Order Insert Update Form</h3>
+<body>
+<h1>Order Insert Update Form</h1>
 <p>&nbsp;</p>
 <form [formGroup]="orderForm" (ngSubmit)="onSubmit()">
     <div class="form-row">
@@ -44,6 +45,7 @@
                         <input id="criteriaUsed" formControlName="criteriaUsed">
                     </div>
                 </div>
+<<<<<<< HEAD
                 <div class="form-row">
                     <div class="form-row inventory-criteria" formGroupName="inventoryCriteria">
                         <div class="form-group">
@@ -54,7 +56,20 @@
                             <label for="quantityBaseTargetHost">Quantity Base Target Host:</label>
                             <input id="quantityBaseTargetHost" type="number" formControlName="quantityBaseTargetHost">
                         </div>
+=======
+
+                <div class="form-row inventory-criteria" formGroupName="inventoryCriteria">
+                    <div class="form-group">
+                        <label for="skuId">SKU ID:</label>
+                        <input id="skuId" formControlName="skuId">
                     </div>
+                    <div class="form-group">
+                        <label for="quantityBaseTargetHost">Quantity Base Target Host:</label>
+                        <input id="quantityBaseTargetHost" type="number" formControlName="quantityBaseTargetHost">
+>>>>>>> 4e79ead3131e1ee19510f4c0f4871833102d6df8
+                    </div>
+                </div>
+                <div class="form-row">
                     <div class="form-group">
                         <label for="unlimitedOverdeliveryAllowed">Unlimited Overdelivery Allowed:</label>
                         <input id="unlimitedOverdeliveryAllowed" type="checkbox"
@@ -71,5 +86,13 @@
     </div>
 
     <button type="submit">Submit</button>
+<<<<<<< HEAD
 
 </form>
+=======
+    <div>
+        <p>{{ response }}</p>
+    </div>
+</form>
+</body>
+>>>>>>> 4e79ead3131e1ee19510f4c0f4871833102d6df8
