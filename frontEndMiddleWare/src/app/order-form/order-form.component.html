@@ -44,21 +44,23 @@
                         <input id="criteriaUsed" formControlName="criteriaUsed">
                     </div>
                 </div>
+                <div class="form-row">
+                    <div class="form-row inventory-criteria" formGroupName="inventoryCriteria">
+                        <div class="form-group">
+                            <label for="skuId">SKU ID:</label>
+                            <input id="skuId" formControlName="skuId">
 
-                <div class="form-row inventory-criteria" formGroupName="inventoryCriteria">
-                    <div class="form-group">
-                        <label for="skuId">SKU ID:</label>
-                        <input id="skuId" formControlName="skuId">
 
-
-                        <label for="quantityBaseTargetHost">Quantity Base Target Host:</label>
-                        <input id="quantityBaseTargetHost" type="number" formControlName="quantityBaseTargetHost">
+                            <label for="quantityBaseTargetHost">Quantity Base Target Host:</label>
+                            <input id="quantityBaseTargetHost" type="number" formControlName="quantityBaseTargetHost">
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="unlimitedOverdeliveryAllowed">Unlimited Overdelivery Allowed:</label>
                         <input id="unlimitedOverdeliveryAllowed" type="checkbox"
                             formControlName="unlimitedOverdeliveryAllowed">
-
+                    </div>
+                    <div class="form-group">
                         <label for="clientId">Client ID:</label>
                         <input id="clientId" formControlName="clientId">
                     </div>
@@ -69,7 +71,5 @@
     </div>
 
     <button type="submit">Submit</button>
-    <div>
-        <p>{{ response }}</p>
-    </div>
+
 </form>
